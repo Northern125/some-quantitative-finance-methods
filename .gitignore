@@ -1,0 +1,5 @@
+venv*
+*.pptx
+*.pdf
+*.csv
+*.doc*
