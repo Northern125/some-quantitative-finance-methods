@@ -14,6 +14,6 @@ def get_call_price(spot_price=100, strike=100, risk_free_rate=0, dividend_rate=0
     N_d2 = standard_normal_cdf(d2)
 
     call_price = spot_price * np.exp(- dividend_rate * time_to_expiration) * N_d1 - \
-        strike * np.exp(- dividend_rate * time_to_expiration) * N_d2
+        strike * np.exp(- risk_free_rate * time_to_expiration) * N_d2
 
     return call_price
