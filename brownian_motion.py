@@ -9,6 +9,11 @@ class DiscreteWienerProcess:
     def __init__(self,
                  initial_position: float = 0,
                  delta_t: float = 1):
+        """
+        :param initial_position: `float`, initial state of the process
+        :param delta_t: `float`, time interval between each process state. In general case units can be any, they only
+        need to be equal among all the variables. Year fraction is preferable as it is a world standard
+        """
         self.initial_position = initial_position
         self.delta_t = delta_t
 
