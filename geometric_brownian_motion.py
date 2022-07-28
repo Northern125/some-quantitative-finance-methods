@@ -20,7 +20,7 @@ class DiscreteGeometricBrownianMotion(DiscreteWienerProcess):
         self._cumulative_diffusion = np.full(shape=(n,), fill_value=np.nan)
 
     def generate_path(self):
-        initial_position_temp = self.initial_position  # roundabout to keep ini pos for geometric process
+        initial_position_temp = self.initial_position  # workaround to keep ini pos for geometric process
         self.initial_position = 0
         DiscreteWienerProcess.generate_path(self)
         self.initial_position = initial_position_temp
@@ -64,5 +64,6 @@ class DiscreteGeometricBrownianMotionSampling(DiscreteGeometricBrownianMotion):
             self.w_paths = self.w_path
 
             self._diffusions[i] = self._diffusion
+            self._drifts[i] = self._drift
 
             self._cumulative_diffusions[i] = self._cumulative_diffusion
