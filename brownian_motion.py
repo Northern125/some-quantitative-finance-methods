@@ -85,6 +85,8 @@ class DiscreteWienerProcess:
                        n: int,
                        n_samples: int = 1):
         """
+        Generate `n_samples` paths of the process, each of length `n`
+
         :param n: `int`, number of process states in each sample. Note that it is by 1 larger than # of steps. Thus,
         for instance, if n = 100, the first state will be according to `initial_position`
         and 99 random states will be generated
