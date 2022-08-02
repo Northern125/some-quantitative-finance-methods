@@ -69,7 +69,7 @@ class DiscreteGeometricBrownianMotion(DiscreteWienerProcess):
 
     def _generate_cumulative_diffusion(self,
                                        w_path: array) -> array:
-        cumulative_diffusion = [self.sigma] * w_path * self.delta_t
+        cumulative_diffusion = [self.sigma] * w_path * self.delta_t ** .5
         return cumulative_diffusion
 
     def _generate_geom_path(self,
